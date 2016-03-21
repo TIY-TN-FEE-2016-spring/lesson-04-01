@@ -14,6 +14,24 @@ const stylePaths = [
   'node_modules/yoga-sass/assets',
 ];
 
+const vendorFileNames = [
+  'loader.js',
+];
+
+
+const vendorFolder = new Merge([
+  'node_modules/loader.js/lib/loader/',
+], {overwrite: true});
+
+const vendorFiles = new Funnel(vendorFolder, {
+  files: vendorFileNames,
+});
+
+const vendor = Concat(vendorFiles, {
+  inputFiles: vendorFileNames,
+  outputFile: '/vendor.js',
+});
+
 const styles = new Sass(stylePaths, 'app.scss', 'app.css', {});
 
 const babelScript = Babel('src', {
@@ -30,4 +48,4 @@ const appScript = Concat(babelScript, {
   outputFile: '/app.js',
 });
 
-module.exports = new Merge([public, styles, appScript]);
+module.exports = new Merge([public, styles, appScript, vendor]);
