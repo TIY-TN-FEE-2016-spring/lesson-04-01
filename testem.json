@@ -7,8 +7,6 @@
     "Chrome"
   ],
   "src_files": [
-    "dist/vendor.js",
-    "dist/app.js",
     "tests/**/*.js"
   ]
 }

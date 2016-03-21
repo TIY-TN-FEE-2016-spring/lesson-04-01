@@ -5,7 +5,7 @@ const Funnel = require('broccoli-funnel');
 const Babel = require('broccoli-babel-transpiler');
 const Concat = require('broccoli-sourcemap-concat');
 
-const public = new LiveReload('public');
+const publicFolder = new LiveReload('public');
 
 const stylePaths = [
   'styles',
@@ -48,4 +48,4 @@ const appScript = Concat(babelScript, {
   outputFile: '/app.js',
 });
 
-module.exports = new Merge([public, styles, appScript, vendor]);
+module.exports = new Merge([publicFolder, styles, appScript, vendor]);

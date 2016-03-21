@@ -4,7 +4,8 @@
   "description": "",
   "main": "public/index.html",
   "scripts": {
-    "serve": "./node_modules/.bin/broccoli-testem serve",
+    "serve": "./node_modules/.bin/ember-cli s",
+    "test": "./node_modules/.bin/ember-cli test -s",
     "build": "./node_modules/.bin/broccoli build dist",
     "lint": "./node_modules/.bin/sass-lint",
     "esfix": "./node_modules/.bin/eslint src --fix && ./node_modules/.bin/eslint tests --fix"
@@ -12,6 +13,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "ember-cli": "^2.4.2",
     "font-awesome": "^4.5.0",
     "loader.js": "^4.0.1",
     "normalize-css": "^2.3.1",
